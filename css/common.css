@@ -1,0 +1,92 @@
+/* loading */
+@keyframes fadeInOut {0% {opacity: 0;}50% {opacity: 1;}100% {opacity: 0;}}
+@keyframes span {0% {opacity: 0;}50% {opacity: 1;}100% {opacity: 0;}}
+#loading {position: fixed;width: 100%;height: 100%;display: flex;background: #fff;flex-direction: column;justify-content: center;align-items: center;z-index: 9999;}
+.dog_loading img {width: 280px;height: 280px;animation: dogbounce 1.5s ease infinite;}
+@keyframes dogbounce {0% {transform: translateY(-10px);}50% {transform: translateY(0);}100% {transform: translateY(-10px);}}
+.text_animation {font-size: 2em;font-weight: bold;display: flex;color: #333;gap: 0.3em;margin-bottom: 20px;animation: span 3s infinite;}
+.text_animation span {opacity: 0;animation: fadeInOut 3s infinite;}
+.text_animation span:nth-child(1) {animation-delay: 0s;}
+.text_animation span:nth-child(2) {animation-delay: 0.2s;}
+.text_animation span:nth-child(3) {animation-delay: 0.4s;}
+.text_animation span:nth-child(4) {animation-delay: 0.6s;}
+.text_animation span:nth-child(5) {animation-delay: 0.8s;}
+.text_animation span:nth-child(6) {animation-delay: 1s;}
+.text_animation span:nth-child(7) {animation-delay: 1.2s;}
+.text_animation span:nth-child(8) {animation-delay: 1.4s;}
+.text_animation span:nth-child(9) {animation-delay: 1.6s;}
+.text_animation span:nth-child(10) {animation-delay: 1.8s;}
+/*  btn */
+.paym_btn {width: 100%;border: none;outline: none;display: flex;background: #fff;border-radius: 8px;gap: 5px;height: 45px;padding: 15px 15px;box-sizing: border-box;align-items: center;justify-content: center;box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1);color: #333;font-weight: bold;overflow: hidden;position: relative;z-index: 1;}
+.paym_btn img {width: 25px;height: 25px;}
+
+.paym_btn::before {content: "";position: absolute;top: 100%;left: 0;width: 100%;height: 100%;background: rgba(20, 30, 70, 0.9);transition: top 0.5s ease;z-index: -1;}
+
+.paym_btn a {width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;gap: 5px;}
+.paym_btn:hover {color: #fff;}
+.paym_btn:hover::before {top: 0;}
+.paym_btn:hover img {filter: invert(1) brightness(4);}
+
+/* 스크롤바 막대 설정*/
+.scrollbar::-webkit-scrollbar {width: 5px;height: 5px;}
+.scrollbar::-webkit-scrollbar-thumb {background: rgba(0, 0, 0, 0.5);border-radius: 35px;}
+
+/* 탑 버튼 */
+.top_btn {cursor:pointer; position: fixed;bottom: 20px;right: 20px;z-index: 10;background: rgba(255, 255, 255, 0.8);width: 40px;height: 40px;box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);border-radius: 50%;display: flex;justify-content: center;align-items: center;transition: all 0.3s ease;}
+
+.top_btn img {width: 20px;height: 20px;transform: rotate(-90deg);cursor: pointer;filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.25));}
+.top_btn:hover{background: rgba(199, 0, 57,0.9);transition: all 0.3s ease;}
+.top_btn:hover img{filter: invert(1) brightness(2);}
+
+/* 모바일 카트 */
+.cart_open {cursor: pointer;z-index: 91;width: 125px;height: 50px;border-radius: 35px 0 0 35px;position: fixed;background: rgb(20, 30, 70);box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.3);bottom: 220px;align-items: center;right: -70px;display: none;transition: right 0.2s ease;}
+.cart_open img{width: 30px;height: 30px;filter: invert(1) brightness(2);}
+
+/* 다크모드 */
+.tog_wrap{cursor: pointer;z-index: 99;width: 125px;height: 50px;border-radius: 35px 0 0 35px;position: fixed;background: rgba(255, 255, 255, 0.8);box-shadow: 0px 1px 15px 0px rgba(0,0,0,0.3);bottom: 160px;align-items: center;right: -70px;transition: right 0.2s ease;}
+.tog_wrap.open {right: 0;}
+.tog_wrap:not(.open):hover{right: -60px;background: rgb(20, 30, 70);}   
+.tog_wrap img{width: 30px;height: 30px;}
+.toggle_switch {position: absolute;top: 50%;width: 55px;height: 29px;left: 66px;transform: translateY(-50%);}
+.toggle_switch input {opacity: 0;width: 0;height: 0;}
+
+.slider {position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0;box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);background: #fff;transition: .4s;border-radius: 34px;}
+.slider:before {position: absolute;content: "";height: 21px;width: 21px;left: 4px;bottom: 4px;background:rgba(20, 30, 70, 0.8);transition: .4s;border-radius: 50%;}
+input:checked+.slider {background: rgba(20, 30, 70, 0.8);box-shadow: 0px 1px 5px 1px rgba(255, 255, 255, 0.5);}
+input:checked+.slider:before {transform: translateX(26px);background: #fff;}
+.slider.round {border-radius: 34px;}
+.slider.round:before {border-radius: 50%;}
+
+/* icon */
+.icon {position: absolute;left: 15px;top: 50%;transform: translateY(-50%);}
+.sun_icon {filter: invert(1) brightness(2);}
+.moon_icon {filter: invert(1) brightness(0) drop-shadow(0px 5px 15px 0px rgba(0,0,0,0.4));display: none;}
+input:checked+.slider .moon_icon {filter: invert(1) brightness(0);}
+
+/* 헤더 밑에 공통 베너  */
+.side_banner {width: 100%;height: 340px;position: relative;}
+.side_banner_menu{background: url('../img/instagram/insta6.jpg') no-repeat center / cover;}
+.side_banner_img{background: url('../img/instagram/insta3.jpg') no-repeat center / cover;}
+.side_banner::before{content: '';position: absolute;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);}
+
+.side_banner h2 {cursor: default;font-family: "Helvetica", snas-serif;position: absolute;top: 50%;left: 50%;color: #fff;transform: translate(-50%, -50%);font-size: 40px;}
+.dogimg {width: 300px;position: absolute;bottom: 10px;right: 10px;opacity: 0.8;}
+/* 더보기 버튼  */
+.more_btn {text-align: center;padding: 8px 8px;box-sizing: border-box;border-radius: 35px;box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1);color: #333;background: #fff;font-weight: bold;overflow: hidden;position: relative;z-index: 1; cursor: pointer;}
+.more_btn::before {content: "";position: absolute;top: 100%;left: 0;width: 110%;height: 110%;background: rgba(199, 0, 57, 0.9);transition: top 0.5s ease;z-index: -1;}
+.more_btn a {width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;gap: 5px;}
+.more_btn:hover {color: #fff;}
+.more_btn:hover::before {top: 0;}
+.more_btn:hover img {filter: invert(1) brightness(4);}
+/* 메인 안에 위치 버튼 */
+.location_btn {position: absolute;top: 0;left: 0;width: 110px;font-size: 14px;height: 35px;}
+.location_btn img {width: 20px;height: 20px;transform: rotate(-180deg);}
+.address_style{font-size: 14px;color: #fff;}
+/* 뒤로가기 버튼  */
+.backbtn {cursor: pointer;z-index: 1;position: absolute;top: 25px;left: 25px;height: 45px;}
+.backbtn>a {display: flex;align-items: center;}
+.backbtn>a>span {font-size: 16px;font-weight: bold;opacity: 0;transform: translateX(-20px);transition: all 0.3s;}
+.backbtn>a>img {width: 40px;height: 40px;}
+.backbtn:hover span {opacity: 1;transform: translateX(0);}
+/* 다크모드 토글 스위치 */
+@media (max-width: 768px) {.cart_open{display: block;}}

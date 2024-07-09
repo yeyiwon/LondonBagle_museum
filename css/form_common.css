@@ -1,0 +1,89 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form_wrap {
+    position: relative;
+    /* width: 350px; */
+}
+
+.form_wrap input {
+    width: 100%;
+    /* width: 350px; */
+    height: 55px;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border: none;
+    
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    /* background: transparent; */
+    color: #333;
+    
+}
+/* 포커스  */
+input:focus{
+    outline-color:#141e46;
+}
+
+/* 라벨 여깄다가  */
+
+.form_wrap label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 19px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+}
+
+/* 포커스 하면 올라가기 다크모드 하게 되면 여기 배경 바꿔야햠 */
+
+input:focus~label, input.has_value~label{
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 2px;
+    background: #fff;
+}
+
+/* 버튼 공통 css */
+
+button {
+    font-family: "Helvetica", snas-serif;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s;
+    background: #ccc;
+    /* background: linear-gradient(135deg, rgba(0, 0, 0, 1) 4.29%, rgba(255, 255, 255, 1) 95.6%), #EBECF0; */
+    /* background-blend-mode: soft-light, normal; */
+
+}
+
+button:hover {
+    background: #141e46;
+    color: #fff;
+}
+
+/* 비밀번호 토글 */
+
+#pwd_icon{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}

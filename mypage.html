@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/mypage.js"></script>
+    <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/mypage.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/darkmode.css">
+
+</head>
+<body>
+<div id="darkmode_toggle"></div>
+<header id="header" class="header">
+
+</header>
+<main id="main" class="main">
+    <section class="side_banner side_banner_img">
+        <h2>My Page</h2>
+    </section>
+
+    <section class="my_order_list">
+    <h2><img src="./img/icon/user.png" alt=""><span id="username"></span>
+        님 안녕하세요 !</h2> 
+    <div class="order_table">
+        <h3><img src="./img/icon/note.png" alt="">주문 내역 </h3>
+        <table class="mypage_table">
+            <caption class="hide">주문 내역</caption>
+            <tbody>
+            <tr class="table_title">
+                <th>상품 정보</th>
+                <th>수량</th>
+                <th>가격</th>
+                <th>픽업 위치</th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </section>
+</main>
+<script src="./js/commonHTML_import.js"></script>
+<script src="./js/header_side.js"></script>
+<script src="./js/utilmenu.js"></script>
+<script src="./js/menu_pan.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    const unameElement = document.getElementById('username');
+    
+    if (loggedInUser) {
+        // 로그인된 상태
+        unameElement.textContent = `${loggedInUser.uname}`;
+    }
+});
+</script>
+</body>
+</html>

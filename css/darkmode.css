@@ -1,0 +1,158 @@
+body {transition: background-color 0.3s, color 0.3s;}
+body.light_mode {background: #fff;color: #333;}
+body.dark_mode {background: #252525;color: #fff;}
+
+.dark_mode .top_btn::after{background: rgba(255,255,255,0.8);color: #333;}
+.dark_mode .toggle_switch::after{background: rgba(255, 255, 255, 0.8);color: #333;}
+.dark_mode .more_btn{background: #fff;}
+
+.dark_mode .instagram h2{color: #fff;}
+.dark_mode .london_info h2 {color: #fff;}
+.dark_mode .more_btn:hover img {filter: invert(1) brightness(4);}
+
+/* index */
+.dark_mode .london_info h3, .dark_mode .london_info p{color: #fff;}
+
+.dark_mode .intro_w_r img, .dark_mode .intro_w_l img{filter: drop-shadow(0 5px 5px rgba(255,255,255,0.1));}
+.dark_mode .prev, .dark_mode .next{background: rgba(255,255,255,0.5);}
+.dark_mode .prev img,
+.dark_mode .next img{filter: invert(1) brightness(0);}
+.dark_mode .prev:hover,
+.dark_mode .next:hover {filter: invert(1) brightness(1);}
+
+.dark_mode .best_menu{background: #fdf6e8;}
+
+.dark_mode .item_wrap p{color: #333;}
+.dark_mode .best_menu h2{color: #333;}
+.dark_mode .lbm{color: #fff;opacity: 0.3;}
+
+
+/* 로케이션 리스트 */
+.dark_mode .l_text_box h2{color: #fff;}
+.dark_mode dt{color: #fff;}
+.dark_mode dd{color: #fff;}
+
+.dark_mode dt{border-bottom: 1px solid #333;}
+.dark_mode dt, .dark_mode dd, .dark_mode dd>address{color: #333;}
+.dark_mode .l_img_box::before{background: rgba(255, 255, 255, 0.7);}
+.dark_mode .location_box:hover .l_img_box::before {background: rgba(255, 255, 255, 0.8);}
+
+/* menu */
+.dark_mode .category_wrap{background: rgba(253, 246, 232,0.8);background: linear-gradient(to right, #FFFFFF, #fdf6e8);color: #333;}
+.dark_mode .category_wrap li{color: #333;}
+.dark_mode .category_wrap li:hover {color: #ccc;}
+.dark_mode .f_bold>span{color: #333;}
+.dark_mode .order_list_box h3{color: #333;}
+.dark_mode .order_box{background: rgba(255, 255, 255, 0.75);}
+.dark_mode .order_menu ul li h3{color: #fff;}
+.dark_mode .order_menu ul li:hover img{filter: brightness(1.1) drop-shadow(0 5px 10px rgba(255, 255, 255, 0.6));}
+
+.dark_mode .menu_list li:hover img{box-shadow: 0px 1px 5px 0px rgba(255, 255, 255, 0.8);}
+
+/* menu */
+.dark_mode .f_bold{
+    color: #333;
+}
+.dark_mode .order_wrap{
+    color: #333;
+}
+.dark_mode .location_box h3{
+    color: #333;
+}
+
+.dark_mode .order_item div:first-child{
+    color: #333;
+}
+.dark_mode .quantity_btn{
+    color: #333;
+}
+
+.dark_mode .total_prcie_box p, .dark_mode .total_prcie_box>p>span{
+    color: #333;
+    font-weight: bold;
+}
+.dark_mode .scrollbar::-webkit-scrollbar-thumb{
+    background: rgba(255,255,255,0.8);
+}
+/* 로그인 */
+.dark_mode .form_wrap input{
+    background: transparent;
+    color: #fff;
+}
+
+.dark_mode input:focus {
+    outline-color: #fff;
+}
+.dark_mode input:focus~label,
+input.has_value~label{
+    background: #333;
+}
+
+.dark_mode #pwd_icon{
+    filter: invert(1) brightness(2);
+}
+.dark_mode select{
+    background: #fff;
+    color: #333;
+}
+
+
+
+
+#dark_mode {
+    cursor: pointer;
+}
+
+
+/* 페이 */
+.dark_mode .payment_box_wrap h2{
+    color: #fff;
+    /* border-bottom: 1px solid #ccc; */
+}
+.dark_mode .payment_box_wrap h2 img{
+    filter: invert(1) brightness(2);
+}
+
+.dark_mode .payment_text span{
+    color: #fff;
+}
+.dark_mode .payment_box{
+    /* color: #333; */
+}
+.dark_mode .p_user_info{
+    /* background: rgba(255, 255, 255, 0.9); */
+    box-shadow: 0px 1px 5px 0px rgba(255,255,255,0.2);
+
+}
+.dark_mode .p_user_info h3{
+    color: #fff;
+}
+.dark_mode .p_user_info h3 img{
+    filter: invert(1) brightness(2);
+}
+.dark_mode .p_user_info_text{
+    color: #fff;
+}
+.dark_mode .total_prcie{
+    color: #fff;
+}
+.dark_mode .total_prcie p span{
+    color: #fff;
+}
+.dark_mode .payment_text p{
+    /* color: #333; */
+}
+
+/* mp */
+.dark_mode .my_order_list h2{
+    color: #fff;
+}
+.dark_mode .my_order_list h2 img{
+    filter: invert(1) brightness(2);
+}
+.dark_mode .order_table h3{
+    color: #fff;
+}
+.dark_mode .order_table h3 img{
+    filter: invert(1) brightness(2);
+}

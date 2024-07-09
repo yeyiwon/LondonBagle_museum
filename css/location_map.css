@@ -1,0 +1,263 @@
+body{
+    /* width: 100%;
+    height: 100vh;
+    overflow: hidden; */
+}
+
+.l_map{
+    /* height: 700px; */
+    max-width: 1400px;
+        /* width: 1400px; */
+    margin: 0 auto;
+        /* position: relative; */
+    padding: 50px 50px;
+    box-sizing: border-box;
+}
+.l_map_wrap{
+    grid-template-columns: 1fr 380px;
+    display: grid;
+    gap: 30px;
+    /* height: 100%; */
+}
+
+
+.map_box{
+    width: 100%;
+    background: pink;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    border-right: 1px solid #cccccc52;
+    box-shadow: 0pc 1px 10px 0px rgba(0, 0, 0, 0.3);
+    
+}
+#map{
+    width: 100%;
+    height: 100%;
+}
+.london_list > h2{
+    font-family: "Helvetica", snas-serif;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    background: #fff;
+}
+
+.location_box_wrap{
+    max-height: 550px;
+    overflow-y: scroll;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+.location_box{
+    width: 100%;
+    /* height: 230px; */
+    padding: 0 10px;
+    position: relative;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    /* cursor: pointer; */
+    /* display: flex; */
+}
+.location_box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+}
+.l_text_box img{
+    width: 24px;
+    height: 24px;
+}
+.l_text_box {
+    z-index: 8;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* text-align: center; */
+        justify-content: space-around;
+}
+
+dl{
+    width: 100%;
+    text-align: center;
+
+}
+
+dt {
+    /* font-family: "Helvetica", snas-serif; */
+        color: #fff;
+        font-size: 26px;
+        text-align: center;
+        padding: 10px 10px;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+}
+
+dt img {
+    width: 24px;
+    height: 24px;
+}
+
+dd {
+    color: #fff;
+    /* color: #333; */
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 16px;
+    margin: 5px 5px;
+    /* white-space: nowrap; */
+}
+
+.dl_flex dd {
+    display: flex;
+}
+
+dd>address {
+    font-weight: bold;
+}
+.l_pickup_btn{
+font-size: 14px;
+width: 220px;
+}
+
+.l_img_box{
+    position: relative;
+    /* width: 190px; */
+    height: 240px;
+    /* height: 190px;    overflow: hidden; */
+}
+.l_img_box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 80px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    /* opacity: 0; */
+    
+    transition: all 0.3s ease;
+}
+
+.location_box:hover .l_img_box::before{
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.location_box:hover{
+    cursor: pointer;
+}
+
+/* 커스텀 오버레이 */
+
+
+.customoverlay {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    gap: 5px;
+    font-size: 14px;
+    position: relative;
+}
+
+.customoverlay::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    text-align: center;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+
+
+@media (max-width: 1024px) {
+    .l_map_wrap {
+        grid-template-columns: 1fr 280px;
+    }
+    .l_pickup_btn {
+        font-size: 12px;
+        width: 170px;
+    }
+    dt{
+        font-size: 22px;
+    }
+}
+@media (max-width: 768px) {
+    .map_box{
+        width: 100%;
+        height: 300px;
+    }
+    .l_map{
+        padding: 20px 20px;
+    }
+    .l_map_wrap {
+        display: flex;
+        flex-direction: column;
+        /* grid-template-columns: 1fr 1fr; */
+        /* 하나의 열로 구성 */
+        gap: 20px;
+    }
+    .location_box_wrap{
+        padding: 15px 0;
+        flex-direction: row;
+        box-sizing: border-box;
+    }
+    .l_img_box{
+        width: 180px;
+        height: 180px;
+    }
+    .l_text_box{
+        justify-content: center;
+        gap: 10px;
+    }
+    dt{
+        align-items: center;
+        justify-content: center;
+    }
+        dt img{
+        display: none;
+        }
+    dd{
+        display: none;
+    }
+    .l_pickup_btn {
+        font-size: 10px;
+        width: 130px;
+    }
+    .l_pickup_btn img{
+        display: none;
+
+    }
+} 

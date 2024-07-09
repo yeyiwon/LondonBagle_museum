@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/form_common.css">
+    <link rel="stylesheet" href="./css/signUp.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- <link rel="stylesheet" href="./css/darkmode.css"> -->
+    
+    <script src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<h1 class="h1_margin">sign up</h1>
+        <div class="backbtn">
+            <a href="#" onclick="goBack()">
+                <img src="./img/icon/backbtn.png" alt="">
+                <span>BACK</span>
+            </a>
+        </div>
+<form action="login.html" method="get" id="signup_form" onsubmit="return sign_form_check()">
+
+    <fieldset>
+        <legend class="hide">회원가입</legend>
+        <!-- 이름 -->
+            <div class="form_wrap">
+                <input type="text" id="uname" name="uname" required>
+                <label for="uname">NAME</label>
+                <span class="msg" id="uname_msg"></span>
+            </div>
+        <!-- 아이디 -->
+            <div class="form_wrap">
+                <input type="text" id="uid" name="uid" required>
+                <label for="uid">ID</label>
+                    <span class="msg" id="uid_msg" style="display: none;"></span>
+                    <button type="button" class="id_check" onclick="search_id()">중복 확인</button>
+            </div>
+            <!-- 비밀번호 -->
+            <div class="form_wrap">
+                <input type="password" id="upw" name="upw" required>
+                <label for="upw">PW</label>
+                
+                <a href="#none" id="show_pwd">
+                    <img src="./img/icon/visibilityoff.png" id="pwd_icon" alt="비밀번호 토글">
+                </a>
+                <span class="msg" id="upw_msg" style="display: none;"></span>
+            </div>
+            <!-- 비밀번호 확인 -->
+            <div class="form_wrap">
+                <input type="password" id="upwchk" name="upwchk" required>
+                <label for="upwchk">PW CHECK</label>
+                <span class="msg" id="upwchk_msg" style="display: none;"></span>
+            </div>
+
+            <div class="form_wrap flexbox">
+                <input type="text" id="uemail" name="uemail"> @
+                <label for="uemail">EMAIL</label>
+                <input type="text" name="email_dns" id="email_dns">
+                <select name="email_sel" id="email_sel">
+                    <option value="1">직접 입력</option>
+                    <option value="네이버">naver.com</option>
+                    <option value="다음">daum.com</option>
+                    <option value="구글">Google.com</option>
+                </select>
+
+            </div>
+
+    <button type="submit" class="sign_up">회원가입</button>
+    </fieldset>
+        
+    </form>
+
+    <!-- <script src="./js/signUp.js"></script> -->
+    <script src="./js/form_focus.js"></script>
+    <script src="./js/change_view.js"></script>
+    <script src="./js/emailselect.js"></script>
+    <!-- <script src="./js/dark_mode.js"></script> -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    
+    <script>
+    const users = [
+        { id: 1, uid: "1111", upw: "1234", uname: '유저1' },
+        { id: 2, uid: "2222", upw: "1234", uname: '유저2' },
+        { id: 3, uid: "3333", upw: "1234", uname: '유저3' },
+        { id: 4, uid: "4444", upw: "1234", uname: '유저4' },
+        { id: 5, uid: "yiwon5555", upw: "yiwon55*A", uname: '예이원' },
+        { id: 6, uid: "yiwon6666", upw: "yiwon66*A", uname: '예이원6' },
+    ];
+
+        const errMsg = {
+        name: "이름을 입력해주세요",
+        id: { 
+            invalid: "6~20자의 영문 소문자와 숫자만 사용 가능합니다",
+            duplicate: "이미 사용중인 아이디입니다.",
+            success: "사용 가능한 아이디입니다",
+            fail: "사용할 수 없는 아이디입니다"
+        },
+        pw: "8~20자의 영문, 숫자, 특수문자를 모두 포함한 비밀번호를 입력해주세요",
+        pwRe: {
+            success: "비밀번호가 일치합니다",
+            fail: "비밀번호가 일치하지 않습니다"
+        }
+
+        };
+
+        function Namechk(){
+            const uname = document.getElementById('uname').value;
+            const unameMsg = document.getElementById('uname_msg');
+        
+            if (uname.trim() === "") {
+                unameMsg.textContent = errMsg.name;
+                unameMsg.classList.add('error');
+                unameMsg.classList.remove('success');
+                unameMsg.style.display = 'block';
+            } else {
+                unameMsg.style.display = 'none';
+            }
+        }
+
+        function search_id() {
+            const uid = document.getElementById('uid').value;
+            const uidchkMsg = document.getElementById('uid_msg');
+            const regex = /^[a-z0-9]{6,20}$/;
+
+            //아이디가 비어있을 때
+        if (!uid) {
+            alert("아이디를 입력하세요.");
+            uidchkMsg.textContent = "아이디를 입력하세요.";
+            uidchkMsg.classList.add('error');
+            uidchkMsg.classList.remove('success');
+            uidchkMsg.style.display = 'block';
+            return false;
+        }
+    // 유효성 검사 
+        if (!regex.test(uid)) {
+            uidchkMsg.textContent = errMsg.id.invalid;
+            uidchkMsg.classList.add('error');
+            uidchkMsg.classList.remove('success');
+            uidchkMsg.style.display = 'block';
+            return false;
+        }
+
+    // 중복 확인
+        const userExists = users.some(user => user.uid === uid);
+
+        if (userExists) {
+            alert(errMsg.id.duplicate);
+            uidchkMsg.textContent = errMsg.id.duplicate;
+            uidchkMsg.classList.add('error');
+            uidchkMsg.classList.remove('success');
+            uidchkMsg.style.display = 'block';
+            return false;
+        } else {
+            alert(errMsg.id.success);
+            uidchkMsg.textContent = errMsg.id.success;
+            uidchkMsg.classList.add('success');
+            uidchkMsg.classList.remove('error');
+            uidchkMsg.style.display = 'block';
+            return true;
+        }
+}
+
+function Password() {
+    const upw = document.getElementById('upw').value;
+    const upwMsg = document.getElementById('upw_msg');
+    const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*\W).{8,20}$/;
+    
+    if (!regex.test(upw)) {
+        upwMsg.textContent = errMsg.pw;
+        upwMsg.classList.add('error');
+        upwMsg.classList.remove('success');
+        upwMsg.style.display = 'block';
+    } else {
+        upwMsg.style.display = 'none';
+    }
+}
+
+function Passwordchk() {
+    const upw = document.getElementById('upw').value;
+    const upwchk = document.getElementById('upwchk').value;
+    const upwchkMsg = document.getElementById('upwchk_msg');
+    
+    if (upw === upwchk) {
+        upwchkMsg.textContent = errMsg.pwRe.success;
+        upwchkMsg.classList.add('success');
+        upwchkMsg.classList.remove('error');
+        upwchkMsg.style.display = 'block';
+    } else {
+        upwchkMsg.textContent = errMsg.pwRe.fail;
+        upwchkMsg.classList.add('error');
+        upwchkMsg.classList.remove('success');
+        upwchkMsg.style.display = 'block';
+    }
+}
+
+document.getElementById('uname').addEventListener('blur', Namechk);
+document.getElementById('uid').addEventListener('blur', search_id);
+document.getElementById('upw').addEventListener('blur', Password);
+document.getElementById('upwchk').addEventListener('blur', Passwordchk);
+
+function sign_form_check() {
+    Namechk();
+    Idchk();
+    Password();
+    Passwordchk();
+
+    const unameMsg = document.getElementById('uname_msg');
+    const uidMsg = document.getElementById('uid_msg');
+    const upwMsg = document.getElementById('upw_msg');
+    const upwchkMsg = document.getElementById('upwchk_msg');
+    
+    if (unameMsg.textContent === errMsg.name || uidMsg.textContent === errMsg.id.invalid || upwMsg.textContent === errMsg.pw || upwchkMsg.textContent === errMsg.pwRe.fail) {
+        alert("회원가입 실패!");
+        return false;
+    } else {
+        alert("회원가입 성공!");
+        return true;
+    }
+}
+    </script>
+
+</body>
+</html>

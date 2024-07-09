@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "finSerifDisplay"; 
+    src: url('../font/FinSerifDisplay-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url('../font/Helvetica-Font/Helvetica-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    /* font-family: 'NanumSquareRound', sans-serif;  */
+    font-size: 18px;
+}
+
+body,h1,h2,h3,p,div,ul,li,dl,dt,dd,form,fieldset,legend,label {margin: 0;padding: 0}
+
+ul,li {list-style: none}
+
+a {text-decoration: none;color: inherit}
+
+fieldset,img {border: 0 none}
+
+input,button {vertical-align: middle}
+
+button {cursor: pointer}
+
+
+/* common */
+.hide {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden
+}
+
+/* skip menu */
+.skip_menu {
+    position: absolute;
+    left: 10px;
+    top: -100px;
+    width: 200px
+}
+
+.skip_menu a {
+    display: block;
+    background: teal;
+    color: #fff;
+    padding: 5px;
+    position: absolute
+}
+
+.skip_menu a:focus,
+.skip_menu a:active {
+    top: 110px
+}
+body.no-scroll {
+    overflow: hidden;
+}

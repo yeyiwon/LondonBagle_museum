@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>런던베이글</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/menupan.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/darkmode.css">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- 슬릭 슬라이더 -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="./js/loding.js"></script>
+</head>
+<body>
+    <div id="loading">
+        <div class="dog_loading">
+            <img src="./img/instagram/dog.png" alt="loading..">
+        </div>
+        <div class="text_animation">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+    </div>
+    
+<div id="wrap">
+
+    <div class="skip_menu">
+        <a href="index.html">메인 컨텐츠 바로가기</a>
+    </div>
+    <div class="top_btn">
+        <img src="./img/icon/arrow.png" alt="탑 버튼">
+    </div>
+    <div id="darkmode_toggle"></div>
+    <header id="header"></header>
+
+<!-- 메인시작 -->
+    <main id="main" class="main">
+            <!-- 스와이퍼 메인베너 -->
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="./img/main_banner/mainbanner1.jpg" alt="">
+                            <p class="main_banner_text">DOSAN</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/main_banner/mainbanner2.jpg" alt="">
+                            <p class="main_banner_text">JAMSIL</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/main_banner/mainbanner4.jpg" alt="">
+                            <p class="main_banner_text">ANGUK</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/main_banner/mainbanner6.jpg" alt="">
+                            <p class="main_banner_text">JEJU</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/main_banner/mainbanner7.jpg" alt="">
+                            <p class="main_banner_text">SUWON</p>
+                        </div>
+                    </div>
+                    <!-- 페이징 필요시 추가 -->
+                    <div class="swiper-pagination"></div>
+                    <!-- 이전, 다음 버튼 필요시 추가 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+</div> 
+<!-- swiper 끝 -->
+
+    <section class="london_info">
+        <h2>Introduction</h2>
+        <div class="intro_wrap">
+            <div class="intro_w_l">
+                <img src="./img/main_banner/mainbanner4.jpg" alt="">
+                <div class="text_box">
+                    <h3>런던베이글 뮤지엄 소개</h3>
+                        <p>
+                        <!-- 서울시 종로구 런던동에 오신 것을 환영합니다. -->
+                        다정한 스텝과 방금 나온 베이글, 그리고 따뜻한 수프가 기다리는 <br>
+                        가장 가까운 런던 속 베이글 뮤지엄,<br>
+                        국내 어디에서도 맛볼 수 없었던
+                        베이글의 식감과 무드를 선보입니다.
+                        </p>
+                </div>
+            </div>
+            <div class="intro_w_r">
+                <div class="text_box text_box_right">
+                    <h3>LOCATIONS</h3>
+                    <p>
+                        전국 5개 지점에서 여러분을 기다리고 있습니다.<br> 
+                        가까운 지점을 방문하여 신선하고 맛있는 베이글을 즐겨보세요.
+                    </p>
+                    <div class="more_btn location_btn">
+                        <a href="locationlist.html">
+                            <img src="./img/icon/ArrowForward.png" alt="">
+                            
+                            <span>매장 찾기</span>
+                            
+                        </a>
+                    </div>
+
+                </div>
+                <img src="./img/main_banner/mainbanner1.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- 베스트 메뉴  -->
+    <section class="best_menu">
+        <h2>BEST MENU</h2>
+        
+        <div class="post-slider">
+            <button class="prev">
+                <img src="./img/icon/ArrowForward.png" alt="">
+            </button>
+                <div class="silder_best_menu">
+                        <div class="best_item">
+                            <div class="item_wrap">
+                                <a href="order.html?menu=bagel">
+                                <img src="./img/샌드위치/쪽파프레첼.png" alt="">
+                                <p>쪽파프레첼</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="best_item">
+                            <div class="item_wrap">
+                                <a href="order.html?menu=sandwich">
+                                    <img src="./img/샌드위치/잠봉뵈르.png" alt="">
+                                    <p>잠봉뵈르</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="best_item">
+                            <div class="item_wrap">
+                                <a href="order.html?menu=sandwich">
+                                    <img src="./img/샌드위치/브릭레인.png" alt="">
+                                    <p>브릭레인</p> 
+                                </a>
+                            </div>    
+                        </div>
+                        <div class="best_item">
+                            <div class="item_wrap">
+                                <a href="order.html?menu=bagel">
+                                    <img src="./img/베이글/시나몬피칸.png" alt="">
+                                    <p>시나몬피칸</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="best_item">
+                            <div class="item_wrap">
+                                <a href="order.html?menu=bagel">
+                                    <img src="./img/베이글/페페로니.png" alt="">
+                                    <p>페페로니</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="best_item">
+                            <div class="item_wrap">
+                            <a href="order.html?menu=bagel">
+                            <img src="./img/베이글/감자치즈.png" alt="">
+                            <p>감자치즈</p></a>
+                        </div>
+                    </div>
+                </div>
+                <button class="next">
+                    <img src="./img/icon/ArrowForward.png" alt="">
+                </button>
+        </div>
+        <div class="more_btn best_menu_more">
+            <a href="order.html">
+                <span>MORE</span>
+                <img src="./img/icon/ArrowForward.png" alt=""> 
+            </a>
+        </div>
+    </section>
+    <section class="instagram">
+        <h2>Instagram</h2>
+        <img src="./img/instagram/dog.png" alt="">
+        <div class="insta_wrap">
+            <div class="insta_grid">
+                <div><img src="./img/instagram/insta5.jpg" alt="">
+            </div>
+                <div><img src="./img/instagram/insta6.jpg" alt=""></div>
+                <div><img src="./img/instagram/3.jpg" alt=""></div>
+            
+                <div><img src="./img/instagram/insta1.jpg" alt=""></div>
+                <div><img src="./img/instagram/6.jpg" alt=""></div>
+                <div><img src="./img/instagram/sec_img1.jpg" alt=""></div>
+            
+                <div><img src="./img/instagram/insta2.jpg" alt=""></div>
+                <div><img src="./img/instagram/insta3.jpg" alt=""></div>
+                <div><img src="./img/instagram/insta4.jpg" alt=""></div>
+            </div>
+        </div>
+        <p class="lbm">London Bagle Museum</p>
+</section>
+</main>
+<footer id="footer"></footer>
+
+</div>
+    <script src="./js/commonHTML_import.js"></script>
+    <script src="./js/header.js"></script>
+
+    <script src="./js/slide_swiper.js"></script>
+    <script src="./js/slick.js"></script>
+    
+    <script src="./js/top_btn.js"></script>
+    <script src="./js/visible.js"></script>
+    <script src="./js/utilmenu.js"></script>
+    <script src="./js/menu_pan.js"></script>
+</body>
+</html>

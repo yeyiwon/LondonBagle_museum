@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/form_common.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- <link rel="stylesheet" href="./css/darkmode.css"> -->
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <section class="login_img_section">
+    <p class="login_img_section_txt">
+      welcome
+    </p>
+  </section>
+
+  <section class="login_form_section">
+          <div class="backbtn">
+            <a href="#" onclick="goBack()">
+                <img src="./img/icon/backbtn.png" alt="">
+                <span>BACK</span>
+            </a>
+        </div>
+      <h1 class="login_logo">
+        <a href="index.html">
+          <img src="./img/instagram/dog.png" alt="런던 베이글">
+        </a>
+      </h1>
+
+    <form action="index.html" method="post" id="login_form" onsubmit="login_form()">
+        <fieldset>
+            <legend class="hide">로그인</legend>
+            <div class="form_wrap">
+                <input type="text" id="uid" name="uid" required>
+                <label for="uid">ID</label>
+            </div>
+            <div class="form_wrap">
+                <input type="password" id="upw" name="upw" required>
+                <label for="upw">PW</label>
+                <a href="#none" id="show_pwd" onclick="change_view()">
+                    <img src="./img/icon/visibilityoff.png" id="pwd_icon" alt="비밀번호 토글">
+                </a>
+            </div>    
+        </fieldset>
+
+        <button type="submit" id="loginbtn">login</button>
+    </form>
+      <ul class="find_link_ul">
+        <li><a href="signUp.html">회원가입</a></li>
+        <span class="line"></span>
+        <li><a href="#">아이디 찾기</a></li>
+        <span class="line"></span>
+        <li><a href="#">비밀번호 찾기</a></li>
+      </ul>
+
+  </section>
+  
+
+    
+<script src="./js/form_focus.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/change_view.js"></script>
+<script src="./js/commonHTML_import.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+
+
+</body>
+</html>

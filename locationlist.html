@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매장 찾기</title>
+    <link rel="icon" href="img/favicon.png">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/london_list.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- <link rel="stylesheet" href="./css/menu.css"> -->
+    <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/location_map.css">
+    <link rel="stylesheet" href="./css/darkmode.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5f142c4c49d6dee02d607d1019d29778"></script>
+</head>
+<body>
+    <div id="darkmode_toggle"></div>
+    <header id="header"></header>
+<!-- 메인 -->
+    <main id="main" class="main">
+        <section class="side_banner side_banner_img">
+            <h2>Location</h2>
+        </section>
+
+        <section class="l_map">
+            <div class="l_map_wrap">
+                <div class="map_box">
+                    <div id="map"></div>
+                </div>
+        <div class="london_list">
+            <ul id="locationList" class="location_box_wrap scrollbar"></ul>
+        </section>
+    </main>
+    <footer id="footer"></footer>
+
+    <script src="./js/commonHTML_import.js"></script>
+    <script src="./js/header_side.js"></script>
+    <script src="./js/top_btn.js"></script>
+    <script src="./js/visible.js"></script>
+    <script src="./js/utilmenu.js"></script>
+    <script src="./js/locationlist.js"></script>
+    <script src="./js/menu_pan.js"></script>
+</body>
+</html>

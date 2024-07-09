@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="icon" href="img/favicon.png">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/london_list.js"></script>
+    <script src="./js/order.js"></script>
+    <link rel="stylesheet" href="./css/darkmode.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/darkmode.css">
+
+</head>
+<body>
+    <div class="top_btn">
+        <img src="./img/icon/arrow.png" alt="탑 버튼">
+    </div>
+    <div id="darkmode_toggle"></div>
+    <header id="header"></header>
+        <div class="popup_layer" id="popup_layer" style="display: none;">
+            <div class="popup_box">
+                <div class="closebtn" onclick="closePop()">
+                    <img src="./img/icon/closebtn.png" alt="">
+                </div>
+                <!--팝업 컨텐츠 영역-->
+                <div class="popup_cont">
+                    <img src="" alt="begel_img" id="bagel_img_box">
+                    <div class="bagel_detail">
+                        <h3 class="bagel_title"></h3>
+                        <span>
+                            <p>
+                                <span class="item_info"></span>
+                            </p>
+                            <div class="change_quantity">
+                                <p>수량 : </p>
+                                <div>
+                                    <span class="cream_cheese_select">
+                                        <label class="checkbox" for="small_radio">
+                                        <input type="radio" name="cream_cheese_radio" id="small_radio" value="_S">
+                                        
+                                            <span class="text">S</span>
+                                            <span class="icon"></span>
+                                            
+                                        </label>
+                                        <label class="checkbox" for="large_radio">
+                                        <input type="radio" name="cream_cheese_radio" id="large_radio" value="_L">
+                                        
+                                            <span class="text">L</span>
+                                            <span class="icon"></span>
+                                            
+                                        </label>
+                                    </span>
+                                    <div class="change_quantity_box">
+                                        <span class="material-symbols-outlined minus_btn draggable">remove</span>
+                                        <span class="quantity">1</span>
+                                        <span class="material-symbols-outlined plus_btn draggable">add</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="f_bold2">
+                                결제 금액 : <span class="bagel_price"></span>원
+                            </p>
+                        </span>
+                        <!--팝업 버튼 영역-->
+                            <div class="popup_btn">
+                    <!-- 장바구니 누르면 주문페이지로 이동 -->
+                    <button type="button" class="more_btn cart_btn" id="order_btn">
+                    
+                        장바구니 담기
+                        <img src="./img/icon/cart.png" alt="">
+                    
+                    </button>
+                    <button type="button" class="cart_btn buy_btn_style one_buy">
+                        <a href="payment.html">
+                        구매하기
+                        <img src="./img/icon/buy.png" alt="">
+                        </a>
+                    </button>
+                            </div>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+        </div>
+    <main id="main" class="main">
+        <section class="side_banner side_banner_menu">
+        <h2>Menu</h2>
+        </section>
+        <ul class="category_wrap">
+                <li>베이글</li>
+                <li>샌드위치</li>
+                <li>스프</li>
+                <li>크림치즈 및 사이드</li> <!-- 크림치즈 & 사이드 -->
+            </ul>
+        <section class="menu_list_sec">
+            
+        <div class="order_section">
+            <div class="order_menu">
+                <ul class="bagel_list">
+
+                </ul>
+                <ul class="sandwich_list" style="display: none;">
+
+                </ul>
+                <ul class="soup_list" style="display: none;">
+
+                </ul>
+                <ul class="side_list" style="display: none;">
+
+                </ul>
+            </div>
+            <div class="order_wrap">
+                
+                <div class="order_box">
+                <div class="order_box_top">
+                    <div class="location_box">
+                        <select id="locationSelect">
+                            <option value="도산점">도산점</option>
+                            <option value="안국점">안국점</option>
+                            <option value="수원점">수원점</option>
+                            <option value="잠실점">잠실점</option>
+                            <option value="제주점">제주점</option>
+
+                        </select>
+                    <h3><img src="./img/icon/location.png" alt="위치 이미지">LOCATION</h3>
+                    <p class="f_bold">장소 : <span id="order_location"></span></p>
+                    <p class="f_bold">주소 : <span id="order_address"></span></p>
+                    <p class="f_bold">영업시간 : <span id="order_opening"></span></p>
+                    <p class="f_bold">픽업가능 시간 : <span id="order_pickup"></span></p>
+                    <p class="f_bold">라스트 오더 : <span id="order_lastorder"></span></p>
+                    </div>
+                    <div class="order_list_box">
+                    <h3><img src="./img/icon/shoppingBag.png" alt="">CART</h3>
+                    <ul class="order_list scrollbar">
+                    </ul>
+                    </div>
+                </div>
+                <div class="payment_box">
+                    <div class="total_prcie_box">
+                        <p> 결제 예정 금액 : </p>
+                        <p><span class="total_prcie">0</span>원</p>
+                        
+                    </div>
+                    <div class="btn_boxxx">
+                        <button type="button" class="paym_btn all_buy">
+                            <a href="payment.html">
+                            구매하기
+                            <img src="./img/icon/buy.png" alt="">
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_open" onclick="m_openPop()">
+            <img src="./img/icon/cart.png" alt="" class="icon cart_icon">
+        </div>
+            <div class="m_popup_layer" id="m_popup_layer" style="display: none;">
+                <div class="m_popup_box">
+                    <div class="m_closebtn" onclick="m_closePop()">
+                        <img src="./img/icon/closebtn.png" alt="">
+                    </div>
+                    <h2>
+                    <img src="./img/icon/cart.png" alt="장바구니">
+                    장바구니</h2>
+                <div class="m_popup_order">
+                    <select id="locationSelect">
+                            <!-- <option value="" selected>위치 변경</option> -->
+                            <option value="도산점">도산점</option>
+                            <option value="안국점">안국점</option>
+                            <option value="수원점">수원점</option>
+                            <option value="잠실점">잠실점</option>
+                            <option value="제주점">제주점</option>
+                    </select>
+                    <div class="m_popup_top">
+                        <h3><img src="./img/icon/location.png" alt="위치 이미지">LOCATION</h3>
+                                <p class="m_f_bold">장소 : <span id="order_location"></span></p>
+                                <p class="m_f_bold">주소 : <span id="order_address"></span></p>
+                                <p class="m_f_bold">영업시간 : <span id="order_opening"></span></p>
+                                <p class="m_f_bold">픽업가능 시간 : <span id="order_pickup"></span></p>
+                                <p class="m_f_bold">라스트 오더 : <span id="order_lastorder"></span></p>
+                    
+                        <div class="m_order_list_box">
+                            <h3><img src="./img/icon/shoppingBag.png" alt="">CART</h3>
+                            <ul class="order_list scrollbar">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="m_popup_bot">
+                    <div class="payment_box_orderp">
+                        <div class="total_prcie_box">
+                            <p> 결제 예정 금액 : </p>
+                            <p><span class="total_prcie">0</span>원</p>
+                            
+                        </div>
+                        <div class="m_btn_boxxx">
+                            <button type="button" class="paym_btn all_buy">
+                                <a href="payment.html">
+                                구매하기
+                                <img src="./img/icon/buy.png" alt="">
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+    <footer id="footer"></footer>
+    <script src="./js/commonHTML_import.js"></script>
+    <script src="./js/header_side.js"></script>
+    <script src="./js/navscroll.js"></script>
+
+
+    <script src="./js/top_btn.js"></script>
+    <script src="./js/visible.js"></script>
+    <script src="./js/utilmenu.js"></script>
+    <script src="./js/locationlist.js"></script>
+    <script src="./js/menu_pan.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const locationSelectElements = document.querySelectorAll('#locationSelect');
+            const orderLocationElements = document.querySelectorAll('#order_location');
+            const orderAddressElements = document.querySelectorAll('#order_address');
+            const orderOpeningElements = document.querySelectorAll('#order_opening');
+            const orderPickupElements = document.querySelectorAll('#order_pickup');
+            const orderLastOrderElements = document.querySelectorAll('#order_lastorder');
+        
+            // 로컬 스토리지에서 선택된 위치 정보 가져오기
+            const selectedLocationJSON = localStorage.getItem('selectedLocation');
+            const selectedLocation = JSON.parse(selectedLocationJSON);
+        
+            // 선택된 위치가 있을 경우, 셀렉트 박스에서 선택되게 처리하고 정보 출력
+            if (selectedLocation) {
+                locationSelectElements.forEach(select => {
+                    for (let i = 0; i < select.options.length; i++) {
+                        if (select.options[i].value === selectedLocation.name) {
+                            select.selectedIndex = i;
+                            break;
+                        }
+                    }
+                });
+        
+                // 선택된 위치 정보를 화면에 출력
+                updateAllLocationInfo(selectedLocation);
+            }
+        
+            // 셀렉트 박스 변경 시 선택된 위치 정보 업데이트 및 로컬 스토리지에 저장
+            locationSelectElements.forEach(select => {
+                select.addEventListener('change', function() {
+                    const selectedIndex = select.selectedIndex;
+                    const selectedOption = select.options[selectedIndex];
+                    const selectedLocationName = selectedOption.value;
+        
+                    const location = locations.find(loc => loc.name === selectedLocationName);
+                    if (location) {
+                        localStorage.setItem('selectedLocation', JSON.stringify(location));
+                        updateAllLocationInfo(location);
+                    }
+                });
+            });
+        
+            function updateAllLocationInfo(location) {
+                orderLocationElements.forEach(el => el.textContent = location.name);
+                orderAddressElements.forEach(el => el.textContent = location.address);
+                orderOpeningElements.forEach(el => el.textContent = location.opening);
+                orderPickupElements.forEach(el => el.textContent = location.pickup);
+                orderLastOrderElements.forEach(el => el.textContent = location.lastorder);
+            }
+        
+            // 모바일 팝업 열기/닫기
+            window.m_openPop = function() {
+                document.getElementById('m_popup_layer').style.display = 'block';
+                document.body.classList.add('no-scroll');
+            }
+        
+            window.m_closePop = function() {
+                document.getElementById('m_popup_layer').style.display = 'none';
+                document.body.classList.remove('no-scroll');
+            }
+        });
+        
+        </script>
+</html>

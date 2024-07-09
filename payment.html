@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제하기</title>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/london_list.js"></script>
+    <script src="./js/store_location.js"></script>
+    <script src="./js/payment.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/darkmode.css">
+    <link rel="stylesheet" href="./css/payment.css">
+
+</head>
+<body>
+<div id="darkmode_toggle"></div>
+<header id="header" class="header"></header>
+<main id="main" class="main">
+    <section class="side_banner side_banner_img">
+        <h2>결제하기</h2>
+    </section>
+    <section class="payment_area">
+        <div class="payment_box_wrap">
+            <h2>주문 상품</h2>
+            <!-- 여기서 장바구니 값 불러와서 보여짐 -->
+        </div>
+        <div class="p_user_info_wrap">
+
+            <div class="p_user_info">
+                <div class="p_u_top">
+                <h2><img src="./img/icon/note.png" alt="">주문 정보</h2>
+                <h3><img src="./img/icon/user.png" alt="">주문자 성함 : <span id="username"></span></h3>
+                <div class="p_user_info_text">
+                    <p><span class="order_info_bold">픽업 장소 :</span> <span class="location_name"></span></p>
+                    <p><span class="order_info_bold">오시는 길 :</span> <span class="location_nearby"></span></p>
+                    <!-- <p><span class="order_info_bold">결제하실 금액 :</span> <span class="payment_total_prcie"></span>원</p> -->
+                </div>
+                </div>
+                <div class="p_btn_box">
+                    <div class="total_prcie">
+                        <p>결제하실 금액 :</p>
+                        <p><span class="payment_total_prcie"></span> 원</p>
+                    </div>
+                    <div class="btn_boxx2">
+                        <button type="button" class="paym_btn" onclick="payment()">
+                    결제하기
+                    <img src="./img/icon/buy.png" alt="">
+                </button>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+</main>
+<footer id="footer"></footer>
+
+    <script src="./js/commonHTML_import.js"></script>
+    <script src="./js/p_nav_scroll.js"></script>
+    <script src="./js/header_side.js"></script>
+    <script src="./js/top_btn.js"></script>
+    <script src="./js/visible.js"></script>
+    <script src="./js/menu_pan.js"></script>
+
+    <script src="./js/introduction.js"></script>
+    <script src="./js/utilmenu.js"></script>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    const unameElement = document.getElementById('username');
+
+    
+    if (loggedInUser) {
+        // 로그인된 상태
+        unameElement.textContent = `${loggedInUser.uname} 님`;
+    }
+});
+</script>
+
+<script>
+    function payment(){
+        alert("결제 완료");
+        location.href ="./mypage.html";
+    }
+
+
+</script>
+
+<style>
+    .order_info_bold{font-weight: bold;}
+</style>
+</body>
+</html>
