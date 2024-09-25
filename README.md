@@ -7,7 +7,9 @@
     - 팀원 : 예이원, 정다운 
     - 개발 기간 : 2024.06.10 ~ 2024.07.03
     - 분류 : 팀 프로젝트
-    - 링크 : https://yeyiwon.github.io/LondonBagle_museum/
+    
+    
+    링크 : https://yeyiwon.github.io/LondonBagle_museum/
 
 
 ## 📌 목차
