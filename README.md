@@ -10,6 +10,11 @@
 
 링크 : https://yeyiwon.github.io/LondonBagle_museum/
 
+테스트용 아이디 
+
+ID : 111111
+PW : 1234
+
 ## 📌 목차
 <b>
 
