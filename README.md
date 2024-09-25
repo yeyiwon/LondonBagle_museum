@@ -2,12 +2,12 @@
 
 # 🥯 London Bagel Team Project  
 
-<img src="./readme_캡처/dog.png" width="300"height="300"/>
+
 
     - 팀원 : 예이원, 정다운 
     - 개발 기간 : 2024.06.10 ~ 2024.07.03
     - 분류 : 팀 프로젝트
-    - 배포 주소 : http://dldnjs1029.dothome.co.kr/
+    - 링크 : https://yeyiwon.github.io/LondonBagle_museum/
 
 
 ## 📌 목차
